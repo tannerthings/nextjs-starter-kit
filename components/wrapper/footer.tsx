@@ -21,11 +21,11 @@ export default function Footer() {
 
     const links = {
         product: [
-            { name: 'Pricing', href: '/pricing' },
+            { name: 'Pricing', href: '/' },
         ],
         company: [
-            { name: 'About', href: '/about' },
-            { name: 'Blog', href: '/blog' },
+            { name: 'About', href: '/' },
+            { name: 'Blog', href: '/' },
         ],
         legal: [
             { name: 'Privacy', href: '/privacy' },
