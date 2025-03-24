@@ -34,6 +34,8 @@ export default function Footer() {
         ],
         legal: [
             { name: 'Privacy', href: '/privacy' },
+            { name: 'Terms', href: '/terms' },
+            { name: 'License', href: '/license' },
         ],
     };
 
@@ -45,7 +47,7 @@ export default function Footer() {
                     <div className="space-y-8">
                         <Link href="/" className="flex items-center gap-2">
                             <Sparkles className="h-5 w-5 text-blue-600" />
-                            <span className="font-semibold">Wiley Swift Reunion</span>
+                            <span className="font-semibold">Next Starter</span>
                         </Link>
                         <p className="text-sm text-gray-600 dark:text-gray-400 max-w-sm">
                             Launch your SaaS in minutes with our production-ready Next.js starter kit.
@@ -96,7 +98,7 @@ export default function Footer() {
                         <div>
                             <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Stay Updated</h3>
                             <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
-                                Subscribe to our newsletter for updates.
+                                Subscribe to our newsletter for updates, tips, and special offers.
                             </p>
                             <form onSubmit={handleSubmit(onSubmit)} className="mt-4 sm:flex sm:max-w-md">
                                 <div className="flex-1">
@@ -131,7 +133,7 @@ export default function Footer() {
                 </div>
                 <div className="mt-12 border-t border-gray-200 dark:border-gray-800 pt-8">
                     <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-                        &copy; {new Date().getFullYear()} Wiley Swift Reunion. All rights reserved.
+                        &copy; {new Date().getFullYear()} Next Starter. All rights reserved.
                     </p>
                 </div>
             </div>

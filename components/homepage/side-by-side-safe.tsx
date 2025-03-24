@@ -84,6 +84,7 @@ export default function SideBySide() {
           >
             <div className="relative rounded-xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-background/5 to-background/0 z-10"></div>
+              <OrbitingCirclesComponent />
               <HeroCarousel />
             </div>
           </motion.div>

@@ -2,12 +2,14 @@ import type { Config } from "tailwindcss";
 
 const svgToDataUri = require("mini-svg-data-uri");
 
+const withMT = require("@material-tailwind/react/utils/withMT");
+
 const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
-const config: Config = {
+const config: Config = withMT({
   // Merging the content arrays and removing duplicates
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -179,6 +181,6 @@ const config: Config = {
       );
     },
   ],
-};
+});
 
 export default config;

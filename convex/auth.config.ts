@@ -1,7 +1,7 @@
 export default {
   providers: [
     {
-      domain: process.env.CLERK_SIGNING_KEY,
+      domain: "https://profound-python-98.clerk.accounts.dev",
       applicationID: "convex",
     },
   ]

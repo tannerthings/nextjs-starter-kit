@@ -10,21 +10,13 @@ import { motion } from "motion/react"
 
 const faqs = [
     {
-        question: "Do I get access to this landing page in the starter kit?",
+        question: "What are the top attractions in and around Alexandria?",
         answer: "Yes, this page isn't even a real landing page more so a template for you to build on."
     },
     {
-        question: "Is the starter kit regularly updated?",
-        answer: "Yes, we continuously update the starter kit with the latest features, security patches, and best practices to ensure you're always working with cutting-edge technology."
+        question: "Is the reunion blog regularly updated?",
+        answer: "Yes, we continuously update the blog to ensure you're always working with latest information."
     },
-    {
-        question: "Can I use this for commercial projects?",
-        answer: "Absolutely! The starter kit comes with a commercial license, allowing you to use it in both personal and commercial projects without any restrictions."
-    },
-    {
-        question: "What kind of support do you provide?",
-        answer: "We offer comprehensive support through our Discord community, where you can get help from both our team and other developers using the starter kit."
-    }
 ]
 
 export function AccordionComponent() {
@@ -45,7 +37,7 @@ export function AccordionComponent() {
                         Frequently Asked Questions
                     </h2>
                     <p className="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
-                        Everything you need to know about the Next.js Starter Kit. Can&apos;t find the answer you&apos;re looking for? Reach out to our team.
+                        Everything you need to know about the Wiley Swift Famliy Reunion. Can&apos;t find the answer you&apos;re looking for? Reach out to reunion team.
                     </p>
                 </div>
 

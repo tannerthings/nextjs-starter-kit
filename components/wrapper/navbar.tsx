@@ -65,7 +65,7 @@ export default function NavBar() {
               <SheetHeader className="pb-6 border-b">
                 <SheetTitle className="flex items-center gap-2">
                   <Sparkles className="h-5 w-5 text-blue-600" />
-                  <span>Next Starter</span>
+                  <span>Wiley Swift Reunion</span>
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-1 mt-6">
@@ -143,7 +143,7 @@ export default function NavBar() {
           </Dialog>
           <Link href="/" prefetch={true} className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-blue-600" />
-            <span className="font-semibold">Next Starter</span>
+            <span className="font-semibold">Reunion 2025</span>
           </Link>
         </div>
 
@@ -151,7 +151,7 @@ export default function NavBar() {
         <div className="hidden lg:flex items-center gap-2">
           <Link href="/" prefetch={true} className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-blue-600" />
-            <span className="font-semibold">Next Starter</span>
+            <span className="font-semibold">Reunion 2025</span>
           </Link>
         </div>
 

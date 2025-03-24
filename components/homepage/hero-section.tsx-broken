@@ -1,33 +1,29 @@
-"use client"
-
+"use client";
 import { ArrowRight, Github, Sparkles } from "lucide-react";
 import Link from "next/link";
-//import { Button } from "../ui/button";
-import { motion } from "motion/react";
-import BackgroundVideo from "../ui/backgroundvideo";
+import { Button } from "../ui/button";
+import { motion } from "framer-motion"; // Corrected import
 
 export default function HeroSection() {
   return (
     <section
-      className="relative flex flex-col items-center justify-center py-20"
+      className="relative flex flex-col items-center justify-center py-20 min-h-screen" // Added min-h-screen
       aria-label="Nextjs Starter Kit Hero"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
-    </div>
- {/*
-      <div className="absolute inset-0 -z-10 ">
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-10">
         <img
-          src="/images/kingstreet.jpg"
+          src="https://images.unsplash.com/photo-1517054612019-1bf855127c43?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e4814eb541ddb4ef86140974f1bee831&fit=crop&w=1000&h=1000&q=80" // Publicly available image
           alt="National Harbor Background"
           className="object-cover w-full h-full"
         />
       </div>
-  */}
+
+      {/*  Overlay for Readability.  Makes the text pop! */}
+      <div className="absolute inset-0 -z-10 bg-black opacity-40"></div>
 
       <div className="space-y-6 text-center max-w-4xl px-4">
-
-        {/* Pill badge *
+        {/* Pill badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,13 +35,13 @@ export default function HeroSection() {
             <span>The Ultimate Reunion Starter Kit</span>
           </div>
         </motion.div>
-/}
+
         {/* Main heading */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 dark:from-white dark:via-blue-300 dark:to-white animate-gradient-x pb-2"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white"  // Changed text color to white
         >
           See You at Wiley Swift<br className="hidden sm:block" />
           Reunion 2025
@@ -56,12 +52,12 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+          className="text-lg md:text-xl text-white max-w-2xl mx-auto" // Changed text color to white
         >
-          Get Ready for more Magic Moments! Wiley Swift Family Reunion is Coming to Alexandria!
+          Get Ready to Harbor the Memories! Wiley Swift Family Reunion is Coming to National Harbor!
         </motion.p>
 
-        {/* CTA Buttons 
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -77,7 +73,7 @@ export default function HeroSection() {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
-        </motion.div>*/}
+        </motion.div>
       </div>
     </section>
   );
