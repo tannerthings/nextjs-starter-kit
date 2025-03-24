@@ -10,8 +10,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://wileyswiftreunion.com"),
   title: {
-    default: 'Next Starter',
-    template: `%s | Next Starter`
+    default: 'Wiley Swift Family Reunion',
+    template: `%s | Wiley Swift Reunion`
   },
   description:
     "The Wiley Swift 2025 Reunion",
