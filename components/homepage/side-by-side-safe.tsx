@@ -7,19 +7,19 @@ import {HeroCarousel } from './HeroCarousel'
 
 const features = [
   {
-    name: 'Family',
+    name: 'Preserving Family History and Traditions',
     description:
-      'Get up and running in no time with pre-configured settings and best practices. Say goodbye to setup and focus on what truly matters - building your application.',
+      'Our gatherings are a chance to share stories, learn about family heritage, and pass down traditions, ensuring that younger generations remain connected to their roots',
     icon: Computer,
   },
   {
-    name: 'Food',
-    description: 'Concentrate on solving business problems instead of dealing with the repetitive setup.',
+    name: 'Strengthening Family Bonds',
+    description: 'Wiley Swift Reunions provide opportunities for family members to reconnect, spend quality time together, and strengthen existing relationships',
     icon: FaBusinessTime,
   },
   {
-    name: 'Love',
-    description: 'Prepare for growth from day one. With built-in optimizations and scalable architecture, your application will be ready to handle increased traffic and complexity.',
+    name: 'Creating Lasting Memories',
+    description: 'Wiley Swift Family Reunions offer unique opportunities to create new memories and celebrate shared experiences, fostering a sense of belonging and connection',
     icon: Network,
   },
 ]
