@@ -21,16 +21,11 @@ export default function Footer() {
 
     const links = {
         product: [
-            { name: 'Features', href: '/features' },
-            { name: 'Documentation', href: '/docs' },
-            { name: 'Examples', href: '/examples' },
             { name: 'Pricing', href: '/pricing' },
         ],
         company: [
             { name: 'About', href: '/about' },
             { name: 'Blog', href: '/blog' },
-            { name: 'Careers', href: '/careers' },
-            { name: 'Contact', href: '/contact' },
         ],
         legal: [
             { name: 'Privacy', href: '/privacy' },
@@ -48,28 +43,15 @@ export default function Footer() {
                             <span className="font-semibold">Wiley Swift Reunion</span>
                         </Link>
                         <p className="text-sm text-gray-600 dark:text-gray-400 max-w-sm">
-                            Launch your SaaS in minutes with our production-ready Next.js starter kit.
-                            Everything you need, from auth to payments.
+                        The next Wiley-Swift Reunion will be held July 25-27, 2025 in Washington DC. Our "home" for the weekend will be at the Hilton Alexandria Old Town, in historic Alexandria, Virginia. This is a perfect venue for a weekend in DC!
                         </p>
-                        <div className="flex space-x-4">
-                            <Link href="https://github.com/michaelshimeles/nextjs14-starter-template" target="_blank">
-                                <Button variant="ghost" size="icon">
-                                    <Github className="h-5 w-5" />
-                                </Button>
-                            </Link>
-                            <Link href="https://twitter.com" target="_blank">
-                                <Button variant="ghost" size="icon">
-                                    <Twitter className="h-5 w-5" />
-                                </Button>
-                            </Link>
-                        </div>
                     </div>
 
                     {/* Links */}
                     <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
                         <div className="md:grid md:grid-cols-2 md:gap-8">
                             <div>
-                                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Product</h3>
+                                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Merch</h3>
                                 <ul className="mt-4 space-y-4">
                                     {links.product.map((item) => (
                                         <li key={item.name}>
@@ -81,7 +63,7 @@ export default function Footer() {
                                 </ul>
                             </div>
                             <div className="mt-10 md:mt-0">
-                                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Company</h3>
+                                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Reunion</h3>
                                 <ul className="mt-4 space-y-4">
                                     {links.company.map((item) => (
                                         <li key={item.name}>
@@ -114,18 +96,6 @@ export default function Footer() {
                                     </Button>
                                 </div>
                             </form>
-                            <div className="mt-8">
-                                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Legal</h3>
-                                <ul className="mt-4 space-y-4">
-                                    {links.legal.map((item) => (
-                                        <li key={item.name}>
-                                            <Link href={item.href} className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                                                {item.name}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>

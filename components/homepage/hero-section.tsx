@@ -27,7 +27,7 @@ export default function HeroSection() {
 
       <div className="space-y-6 text-center max-w-4xl px-4">
 
-        {/* Pill badge */}
+        {/* Pill badge
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export default function HeroSection() {
             <span>The Ultimate Reunion Starter Kit</span>
           </div>
         </motion.div>
-
+ */}
         {/* Main heading */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
