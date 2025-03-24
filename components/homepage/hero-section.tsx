@@ -18,7 +18,7 @@ export default function HeroSection() {
 
       <div className="absolute inset-0 -z-10 ">
         <img
-          src="/images/kingstreet.jpg"
+          src="/images/alex0.jpg"
           alt="National Harbor Background"
           className="object-cover w-full h-full"
         />

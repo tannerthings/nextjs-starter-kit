@@ -8,31 +8,31 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nextstarter.xyz/"),
+  metadataBase: new URL("https://wileyswiftreunion.com"),
   title: {
     default: 'Next Starter',
     template: `%s | Next Starter`
   },
   description:
-    "The Ultimate Nextjs 15 Starter Kit for quickly building your SaaS, giving you time to focus on what really matters",
+    "The Wiley Swift 2025 Reunion",
   openGraph: {
     description:
-      "The Ultimate Nextjs 15 Starter Kit for quickly building your SaaS, giving you time to focus on what really matters",
+      "The Wiley Swift 2025 Reunion",
     images: [
-      "https://dwdwn8b5ye.ufs.sh/f/MD2AM9SEY8GucGJl7b5qyE7FjNDKYduLOG2QHWh3f5RgSi0c",
+      "https://7mt7h9a7m4.ufs.sh/f/FuIgmNtZWliey5XfvrMo2VvLrS83lcPqpT4hGUtsNMCdF5Oe",
     ],
-    url: "https://nextstarter.xyz/",
+    url: "https://wileyswiftreunion.com/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nextjs Starter Kit",
+    title: "Wiley Swift",
     description:
-      "The Ultimate Nextjs 15 Starter Kit for quickly building your SaaS, giving you time to focus on what really matters",
+      "The Wiley Swift 2025 Reunion",
     siteId: "",
-    creator: "@rasmickyy",
+    creator: "@rennatsx",
     creatorId: "",
     images: [
-      "https://dwdwn8b5ye.ufs.sh/f/MD2AM9SEY8GucGJl7b5qyE7FjNDKYduLOG2QHWh3f5RgSi0c",
+      "https://7mt7h9a7m4.ufs.sh/f/FuIgmNtZWliey5XfvrMo2VvLrS83lcPqpT4hGUtsNMCdF5Oe",
     ],
   },
 };
