@@ -15,7 +15,7 @@ export default function HeroSection() {
       {/* Background gradient */}
       <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
     </div>
- {/*
+
       <div className="absolute inset-0 -z-10 ">
         <img
           src="/images/kingstreet.jpg"
@@ -23,11 +23,11 @@ export default function HeroSection() {
           className="object-cover w-full h-full"
         />
       </div>
-  */}
+  
 
       <div className="space-y-6 text-center max-w-4xl px-4">
 
-        {/* Pill badge *
+        {/* Pill badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export default function HeroSection() {
             <span>The Ultimate Reunion Starter Kit</span>
           </div>
         </motion.div>
-/}
+
         {/* Main heading */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

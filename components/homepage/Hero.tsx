@@ -1,6 +1,7 @@
+import { Button } from "../ui/button";
 import HeroCarousel from "./HeroCarousel";
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+
 
 type Props = {}
 
@@ -30,7 +31,7 @@ const Hero = () => {
             - Used text-base for mobile, text-lg for medium and larger.
             - Adjusted leading (line-height) for better readability.
           */}
-          Remember the "Magic Moment" of 2023? It was wonderful to reconnect and simply be family! Now, get ready for more magic in 2025! Our theme says it all: Family, Food, and Love – just what the Wiley-Swift clan does best! We in the DMV are excited to host and are working hard to make this reunion the best one yet!.
+          Remember the Magic Moment of 2023? It was wonderful to reconnect and simply be family! Now, get ready for more magic in 2025! Our theme says it all: Family, Food, and Love – just what the Wiley-Swift clan does best! We in the DMV are excited to host and are working hard to make this reunion the best one yet!.
         </p>
        
         <Button asChild size='lg' className='mt-6 md:mt-8 lg:mt-10'>
