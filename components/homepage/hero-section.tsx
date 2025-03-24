@@ -12,7 +12,7 @@ export default function HeroSection() {
       className="relative flex flex-col items-center justify-center py-20"
       aria-label="Nextjs Starter Kit Hero"
     >
-      {/* Background gradient */}
+      {/* Background gradient 
       <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
     </div>
 
@@ -23,7 +23,7 @@ export default function HeroSection() {
           className="object-cover w-full h-full"
         />
       </div>
-  
+  */}
 
       <div className="space-y-6 text-center max-w-4xl px-4">
 
