@@ -43,7 +43,7 @@ export default function Footer() {
                             <span className="font-semibold">Wiley Swift Reunion</span>
                         </Link>
                         <p className="text-sm text-gray-600 dark:text-gray-400 max-w-sm">
-                        The next Wiley-Swift Reunion will be held July 25-27, 2025 in Washington DC. Our "home" for the weekend will be at the Hilton Alexandria Old Town, in historic Alexandria, Virginia. This is a perfect venue for a weekend in DC!
+                        The Wiley-Swift Reunion will be held July 25-27, 2025 in Washington DC. Our home for the weekend will be at the Hilton Alexandria Old Town, in historic Alexandria, Virginia. This is a perfect venue for a weekend in DC!
                         </p>
                     </div>
 
