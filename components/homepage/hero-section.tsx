@@ -47,7 +47,7 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 dark:from-white dark:via-blue-300 dark:to-white animate-gradient-x pb-2"
         >
-          See You at Wiley Swift<br className="hidden sm:block" />
+          See You at Wiley Swift <br className="hidden sm:block" />
           Reunion 2025
         </motion.h1>
 
