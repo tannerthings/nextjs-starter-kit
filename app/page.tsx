@@ -7,6 +7,7 @@ import BackgroundVideo from "@/components/ui/backgroundvideo";
 import EmbeddedVideo from "@/components/ui/embeddedvideo";
 import PageWrapper from "@/components/wrapper/page-wrapper";
 import { polar } from "@/lib/polar";
+import MarketingPage from "./(pages)/marketing/page";
 
 export default async function Home() {
 /*
@@ -24,6 +25,7 @@ export default async function Home() {
       <MarketingCards />
       <Pricing result={data?.result as any} />
       <AccordionComponent />
+      <BackgroundVideo videoId="993099713">
     </PageWrapper>
   );
   */
@@ -31,9 +33,9 @@ export default async function Home() {
     <PageWrapper>
       
       <div className="flex flex-col justify-center items-center w-full mt-[1rem] p-3">
-      <BackgroundVideo videoId="993099713">
+        <MarketingPage />
         <HeroSection />
-        </BackgroundVideo>
+
       </div>
       
       <SideBySide />
@@ -43,3 +45,6 @@ export default async function Home() {
   );
 
 }
+
+
+MarketingPage
