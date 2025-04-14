@@ -28,7 +28,7 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: "Magic Moments",
     href: "/magic-moments.html",
-    description: "What your favorite moments.",
+    description: "Watch your favorite moments",
   },
 ];
 
