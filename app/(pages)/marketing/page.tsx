@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
 import Link from "next/link";
 import PageWrapper from "@/components/wrapper/page-wrapper";
-import { VideoPlayer } from "@/components/video-player";
 import CustomLink from "@/components/custom-link";
 
 export const metadata: Metadata = {
@@ -45,10 +44,17 @@ export default async function MarketingPage() {
             </Button>
           </Link>
         </div>
-        <div className="mb-3 mt-[1.5rem] max-w-[900px] w-full">
-          <VideoPlayer videoSrc="https://utfs.io/f/08b0a37f-afd7-4623-b5cc-e85184528fce-1f02.mp4" />
-        </div>
+
       </div>
     </PageWrapper>
   );
 }
+
+
+/*
+
+        <div className="mb-3 mt-[1.5rem] max-w-[900px] w-full">
+          <VideoPlayer videoSrc="https://utfs.io/f/08b0a37f-afd7-4623-b5cc-e85184528fce-1f02.mp4" />
+        </div>
+
+        */
