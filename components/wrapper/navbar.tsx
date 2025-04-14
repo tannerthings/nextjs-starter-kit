@@ -26,9 +26,9 @@ import { UserProfile } from "../user-profile";
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Magic Moments",
-    href: "/magic-moments.html",
-    description: "Watch your favorite moments",
+    title: "Reunion Info",
+    href: "/",
+    description: "Find useful reunion info",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function NavBar() {
                     Links
                   </h2>
                   <Link
-                    href="https://github.com/michaelshimeles/nextjs14-starter-template"
+                    href="/magic-moments.html"
                     target="_blank"
                     prefetch={true}
                   >
@@ -95,7 +95,7 @@ export default function NavBar() {
                       className="w-full justify-start text-base font-normal h-11 border border-muted/40 mb-2 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-950/50 dark:hover:text-blue-400 transition-colors"
                     >
                       
-                      Reunion Info
+                      Magic Moments
                     </Button>
                   </Link>
                 </div>
