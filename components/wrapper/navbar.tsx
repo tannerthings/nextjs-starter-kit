@@ -26,9 +26,9 @@ import { UserProfile } from "../user-profile";
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Blog",
-    href: "/blog",
-    description: "Read my interesting blog posts.",
+    title: "Magic Moments",
+    href: "/magic-moments.html",
+    description: "What your favorite moments.",
   },
 ];
 
@@ -94,33 +94,8 @@ export default function NavBar() {
                       variant="ghost"
                       className="w-full justify-start text-base font-normal h-11 border border-muted/40 mb-2 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-950/50 dark:hover:text-blue-400 transition-colors"
                     >
-                      <Github className="h-4 w-4 mr-2" />
-                      GitHub
-                    </Button>
-                  </Link>
-                  <Link
-                    href="https://twitter.com/rasmickyy"
-                    target="_blank"
-                    prefetch={true}
-                  >
-                    <Button
-                      variant="ghost"
-                      className="w-full justify-start text-base font-normal h-11 border border-muted/40 mb-2 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-950/50 dark:hover:text-blue-400 transition-colors"
-                    >
-                      <Twitter className="h-4 w-4 mr-2" />X (Twitter)
-                    </Button>
-                  </Link>
-                  <Link
-                    href="https://youtube.com/@rasmickyy"
-                    target="_blank"
-                    prefetch={true}
-                  >
-                    <Button
-                      variant="ghost"
-                      className="w-full justify-start text-base font-normal h-11 border border-muted/40 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-950/50 dark:hover:text-blue-400 transition-colors"
-                    >
-                      <Youtube className="h-4 w-4 mr-2" />
-                      YouTube
+                      
+                      Reunion Info
                     </Button>
                   </Link>
                 </div>
@@ -156,7 +131,7 @@ export default function NavBar() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Reunion Info</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {components.map((component) => (
