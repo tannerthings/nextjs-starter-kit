@@ -83,93 +83,33 @@ export default function ParallaxHero(): React.ReactElement {
     : [];
 
   return (
-    <div className="min-h-screen w-full">
+    <div className="min-h-screen">
       {/* Hero Section with Parallax */}
-      <div className="relative h-screen w-full overflow-hidden">
+      <div className="relative h-screen w-screen overflow-hidden">
         {/* Background Layer with image - moves slower */}
         <div 
-  className="absolute inset-0 bg-cover bg-center"
-  style={{ 
-    transform: isClient ? `translateY(${scrollY * 0.1}px)` : 'translateY(0px)',
-    backgroundImage: `url('/images/ReunionHeroImageAI.png')`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    width: '100%',
-    height: '100%',
-  }}
->
-  {/* Responsive background images using media queries */}
-  <style jsx>{`
-    /* Base image for all devices */
-    div {
-      background-image: url('/images/ReunionHeroImageAI.png');
-    }
-    
-    /* iPhone XR and similar devices */
-    @media only screen 
-      and (device-width: 414px) 
-      and (device-height: 896px) 
-      and (-webkit-device-pixel-ratio: 2) {
-      div {
-        background-image: url('/images/ReunionHeroImageAI-mobile.png');
-      }
-    }
-    
-    /* General mobile devices */
-    @media only screen and (min-width: 320px) and (max-width: 896px) {
-      div {
-        background-image: url('/images/ReunionHeroImageAI-mobile.png');
-      }
-    }
-    
-    /* Tablets and small screens */
-    @media only screen and (min-width: 897px) and (max-width: 1366px) {
-      div {
-        background-image: url('/images/ReunionHeroImageAI.png');
-        background-position: center center;
-      }
-    }
-    
-    /* Standard desktop screens */
-    @media only screen and (min-width: 1367px) and (max-width: 2560px) {
-      div {
-        background-image: url('/images/ReunionHeroImageAI.png');
-      }
-    }
-    
-    /* 4K Retina displays */
-    @media only screen and (min-width: 3840px) and (-webkit-min-device-pixel-ratio: 2) {
-      div {
-        background-image: url('/images/ReunionHeroImageAI-4k.png');
-        background-position: center 25%;
-      }
-    }
-    
-    /* Handle notch on newer iPhones */
-    @supports (padding: max(0px)) {
-      div {
-        padding-left: max(0px, env(safe-area-inset-left));
-        padding-right: max(0px, env(safe-area-inset-right));
-        padding-top: max(0px, env(safe-area-inset-top));
-        padding-bottom: max(0px, env(safe-area-inset-bottom));
-      }
-    }
-    
-    /* Adjust parallax effect for different screen sizes */
-    @media only screen and (max-width: 896px) {
-      div {
-        transform: translateY(0) !important; /* Disable parallax on small screens */
-      }
-    }
-  `}</style>
-  
-  {/* Dark overlay as a separate element */}
-  <div 
-    className="absolute inset-0" 
-    style={{ backgroundColor: 'rgba(0, 0, 50, 0.0)' }}
-  ></div>
-</div>
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ 
+            transform: isClient ? `translateY(${scrollY * 0.1}px)` : 'translateY(0px)',
+            backgroundImage: `url('/images/ReunionHeroImageFlex.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            minWidth: '100%',
+            minHeight: '100%',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center',
+            overflow: 'hidden'
+          }}
+        >
+          {/* Dark overlay as a separate element instead of box-shadow */}
+          <div 
+            className="absolute inset-0" 
+            style={{ backgroundColor: 'rgba(0, 0, 50, 0.0)' }}
+          ></div>
+        </div>
         
         {/* Middle Layer - stars/particles */}
         {isClient && (
@@ -195,25 +135,22 @@ export default function ParallaxHero(): React.ReactElement {
         
         {/* Foreground Layer - text content moves faster */}
         <div 
-          className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 md:px-8 lg:px-16"
+          className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4"
           style={{ transform: isClient ? `translateY(${scrollY * 0.5}px)` : 'translateY(0px)' }}
-        >
-          
-          {/* Call to Action Buttons - Responsive layout */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-2">
-          <Link href="/registration" prefetch={true}>
-              <Button className="w-full sm:w-auto px-4 sm:px-6 md:px-8 py-2 md:py-3 bg-black hover:bg-yellow-400 text-white hover:text-black font-semibold rounded-lg transition-colors duration-300 shadow-lg transform hover:scale-105" variant="outline">
-                Register Now
-              </Button>
-            </Link>  
-            
-            <Link href="/learnmore" prefetch={true}>
-              <Button className="w-full sm:w-auto px-4 sm:px-6 md:px-8 py-2 md:py-3 bg-transparent hover:bg-white/10 text-white font-semibold border-2 border-white rounded-lg transition-colors duration-300 shadow-lg transform hover:scale-105">
-                Learn More
-              </Button>
+        >          
+          {/* Call to Action Buttons */}
+          <div className="flex flex-row gap-4 mt-2">
+            <Link href="/learnmore" prefetch={true} >
+            <Button className="px-8 py-3 bg-transparent hover:bg-white/10 text-white font-semibold border-2 border-white rounded-lg transition-colors duration-300 shadow-lg transform hover:scale-105">
+              Learn More
+            </Button>
             </Link>
 
-
+            <Link href="/registration" prefetch={true} >
+            <Button className="px-8 py-3 bg-black hover:bg-yellow-400 text-white hover:text-black font-semibold rounded-lg transition-colors duration-300 shadow-lg transform hover:scale-105" variant="outline">
+              Register Now
+            </Button>
+            </Link>  
           </div>
         </div>
       </div>
