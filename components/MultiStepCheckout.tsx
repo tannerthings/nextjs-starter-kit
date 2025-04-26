@@ -235,7 +235,7 @@ await sendReservationEmail(
   orderId,
   customerInfo.email,
   allAttendeeEmails,
-  "rennatx@gmail.com", // Replace with actual admin email or fetch from config
+  "susanrwiley@gmail.com", // Replace with actual admin email or fetch from config
   {
     items: cart.items,
     total: cart.total
@@ -641,32 +641,6 @@ await sendReservationEmail(
   // Step 4: Confirmation (handled by parent component)
   return null;
 }
-
-  // Function to send email through our API route
-  async function sendReservationEmailOld(
-  ) {
-    try {
-      const response = await fetch("/api/email/send-email-confirmation", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer re_Ss3v3cFu_GNyfvPqDkEV9RWDJ4q3YJ9eC`,
-        },
-        body: JSON.stringify({
-          to: "rennatx@mgmail.com",
-          subject: "Your Reservation - Payment Instructions",
-          html: `
-          `,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to send confirmation email");
-      }
-    } catch (error) {
-      console.error("Error sending email:", error);
-    }
-  }
 
   async function sendReservationEmail(
     orderId: Id<"orders">,
