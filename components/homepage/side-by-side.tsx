@@ -4,6 +4,7 @@ import { FaBusinessTime } from 'react-icons/fa'
 import { OrbitingCirclesComponent } from './orbiting-circles'
 import { motion } from "motion/react"
 import {HeroCarousel } from './HeroCarousel'
+import Link from 'next/link';
 
 const features = [
   {
@@ -37,14 +38,6 @@ export default function SideBySide() {
             className="lg:pr-8 lg:pt-4"
           >
             <div className="lg:max-w-lg">
-              {/* Pill badge */}
-              <div className="mb-6 w-fit rounded-full border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-900/30 px-4 py-1">
-                <div className="flex items-center gap-2 text-sm font-medium text-blue-900 dark:text-blue-200">
-                  <Sparkles className="h-4 w-4" />
-                  <span>Join the Celebration</span>
-                </div>
-              </div>
-
               <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 dark:from-white dark:via-blue-300 dark:to-white pb-2">
               Remember the Magic Moment of 2023?
               </h2>

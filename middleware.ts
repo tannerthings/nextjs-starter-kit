@@ -18,7 +18,7 @@ export default clerkMiddleware(async (auth, req) => {
   const isDashboard = req.nextUrl.href.includes(`/dashboard`)
 
   if (isDashboard && !hasActiveSubscription) {
-    const pricingUrl = new URL('/pricing', req.nextUrl.origin)
+    const pricingUrl = new URL('/admin', req.nextUrl.origin)
     // Redirect to the pricing page
     return NextResponse.redirect(pricingUrl);
   }
@@ -34,3 +34,5 @@ export const config = {
     '/(api|trpc)(.*)',
   ],
 }
+
+

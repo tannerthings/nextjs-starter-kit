@@ -44,7 +44,7 @@ export default function NavBar() {
   return (
     <div 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md bg-white/80 dark:bg-black/80 transition-all duration-500 ease-in-out", 
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out", 
         isLoaded ? "translate-y-0 opacity-100" : "-translate-y-5 opacity-0"
       )}
     >
@@ -86,6 +86,19 @@ export default function NavBar() {
                     Links
                   </h2>
                   <Link
+                    href="/registration"
+                    target="_blank"
+                    prefetch={true}
+                  >
+                    <Button
+                      variant="ghost"
+                      className="w-full justify-start text-base font-normal h-11 border border-muted/40 mb-2 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-950/50 dark:hover:text-blue-400 transition-colors"
+                    >
+                      
+                     Register
+                    </Button>
+                  </Link>
+                  <Link
                     href="/magic-moments.html"
                     target="_blank"
                     prefetch={true}
@@ -102,9 +115,9 @@ export default function NavBar() {
 
                 {!userId && (
                   <div className="px-2 py-4 border-t mt-auto">
-                    <Link href="/sign-in" prefetch={true}>
+                    <Link href="/registration" prefetch={true}>
                       <Button className="w-full bg-blue-600 hover:bg-blue-500">
-                        Sign in
+                        Register
                       </Button>
                     </Link>
                   </div>
@@ -112,7 +125,7 @@ export default function NavBar() {
               </div>
             </SheetContent>
           </Dialog>
-          <Link href="/" prefetch={true} className="flex items-center gap-2">
+          <Link href="/register" prefetch={true} className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-blue-600" />
             <span className="font-semibold">Reunion 2025</span>
           </Link>
@@ -158,6 +171,16 @@ export default function NavBar() {
         <div className="flex items-center gap-2">
           <ModeToggle />
           {!userId && (
+            <Link href="/registration" prefetch={true}>
+              <Button
+                variant="default"
+                className="bg-blue-600 hover:bg-blue-500 text-white"
+              >
+                Register
+              </Button>
+            </Link>
+          )}
+                    {!userId && (
             <Link href="/sign-in" prefetch={true}>
               <Button
                 variant="default"

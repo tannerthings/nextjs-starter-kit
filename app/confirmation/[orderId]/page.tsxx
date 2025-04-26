@@ -1,0 +1,219 @@
+// app/confirmation/[orderId]/page.tsx
+'use client';
+
+import { useEffect } from 'react';
+import { useParams } from 'next/navigation';
+import { useQuery } from 'convex/react';
+import { api } from '@/convex/_generated/api';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { CheckCircle, Calendar, MapPin, Mail, Download, Printer, ArrowLeft, Users } from 'lucide-react';
+import Link from 'next/link';
+
+export default function ConfirmationPage() {
+  const params = useParams();
+  const orderId = params.orderId as string;
+  
+  // Get order details
+  const order = useQuery(api.cart.getOrder, { orderId });
+  
+  // Get attendees for this order
+  const attendees = useQuery(api.cart.getOrderAttendees, { orderId });
+  
+  // Get event details
+  const firstTicketId = order?.items?.find(item => item.itemType === 'ticket')?.itemId;
+  const ticketType = firstTicketId 
+    ? useQuery(api.ticketTypes.getTicketType, { ticketTypeId: firstTicketId }) 
+    : null;
+  
+  const event = ticketType?.eventId
+    ? useQuery(api.events.getEvent, { eventId: ticketType.eventId })
+    : null;
+  
+  // Group attendees by ticket type
+  const attendeesByType = attendees ? attendees.reduce((groups: any, attendee: any) => {
+    const ticketTypeId = attendee.ticketTypeId;
+    if (!groups[ticketTypeId]) {
+      groups[ticketTypeId] = [];
+    }
+    groups[ticketTypeId].push(attendee);
+    return groups;
+  }, {}) : {};
+  
+  // Display loading state if data is not yet available
+  if (!order || !attendees) {
+    return (
+      <div className="container py-12 flex justify-center items-center">
+        <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+  
+  return (
+    <div className="container py-12 max-w-4xl mx-auto">
+      <div className="mb-8 text-center">
+        <div className="flex justify-center mb-4">
+          <CheckCircle className="h-16 w-16 text-green-500" />
+        </div>
+        <h1 className="text-3xl font-bold">Registration Confirmed!</h1>
+        <p className="text-gray-600 mt-2">
+          Your tickets have been successfully booked and sent to your email.
+        </p>
+      </div>
+      
+      <Card className="mb-8">
+        <CardHeader className="bg-gray-50 border-b">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+            <div>
+              <CardTitle>Order #{orderId.substring(0, 8)}</CardTitle>
+              <CardDescription>Placed on {new Date(order.createdAt).toLocaleDateString()}</CardDescription>
+            </div>
+          </div>
+        </CardHeader>
+        
+        <CardContent className="pt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Event Details */}
+            {event && (
+              <div className="space-y-4">
+                <h3 className="font-semibold text-lg">Event Details</h3>
+                
+                <div className="flex gap-3 items-start">
+                  <Calendar className="h-5 w-5 text-gray-500 mt-0.5" />
+                  <div>
+                    <p className="font-medium">{event.name}</p>
+                    <p className="text-gray-600">{new Date(event.date).toLocaleDateString()}</p>
+                  </div>
+                </div>
+                
+                <div className="flex gap-3 items-start">
+                  <MapPin className="h-5 w-5 text-gray-500 mt-0.5" />
+                  <div>
+                    <p className="font-medium">Location</p>
+                    <p className="text-gray-600">{event.location}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+            
+            {/* Order Summary */}
+            <div className="space-y-4">
+              <h3 className="font-semibold text-lg">Order Summary</h3>
+              
+              <div className="flex gap-3 items-start">
+                <Users className="h-5 w-5 text-gray-500 mt-0.5" />
+                <div>
+                  <p className="font-medium">Tickets</p>
+                  <ul className="text-gray-600">
+                    {order.items.map((item: any, index: number) => (
+                      <li key={index}>
+                        {item.name} × {item.quantity}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="flex gap-3 items-start">
+                <Mail className="h-5 w-5 text-gray-500 mt-0.5" />
+                <div>
+                  <p className="font-medium">Contact Information</p>
+                  <p className="text-gray-600">{order.customerEmail}</p>
+                  <p className="text-gray-600">{order.customerPhone}</p>
+                </div>
+              </div>
+              
+              <div className="mt-4 pt-4 border-t">
+                <div className="flex justify-between font-semibold">
+                  <span>Total Amount:</span>
+                  <span>${order.total.toFixed(2)}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+        
+        <CardFooter className="bg-gray-50 border-t flex flex-col sm:flex-row gap-3 justify-between">
+          <Button variant="outline" size="sm" asChild>
+            <Link href={`mailto:support@yourevent.com?subject=Question about Order ${orderId.substring(0, 8)}`}>
+              <Mail className="h-4 w-4 mr-2" />
+              Contact Support
+            </Link>
+          </Button>
+          
+          <div className="flex gap-3">
+            <Button variant="outline" size="sm" onClick={() => window.print()}>
+              <Printer className="h-4 w-4 mr-2" />
+              Print
+            </Button>
+            <Button size="sm">
+              <Download className="h-4 w-4 mr-2" />
+              Download Tickets
+            </Button>
+          </div>
+        </CardFooter>
+      </Card>
+      
+      {/* Attendee Details */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Attendee Details</CardTitle>
+          <CardDescription>
+            Information for all {attendees.length} registered attendees
+          </CardDescription>
+        </CardHeader>
+        
+        <CardContent>
+          <div className="space-y-6">
+            {/* Group attendees by ticket type */}
+            {Object.entries(attendeesByType).map(([typeId, typeAttendees]: [string, any[]]) => {
+              const ticketTypeName = order.items.find((item: any) => item.itemId === typeId)?.name || 'Ticket';
+              
+              return (
+                <div key={typeId} className="space-y-4">
+                  <h3 className="font-medium text-lg">
+                    {ticketTypeName} 
+                    <span className="text-gray-500 font-normal ml-2">
+                      ({typeAttendees.length} {typeAttendees.length === 1 ? 'ticket' : 'tickets'})
+                    </span>
+                  </h3>
+                  
+                  <div className="divide-y border rounded-lg">
+                    {typeAttendees.map((attendee, index) => (
+                      <div key={attendee._id} className="p-4">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                          <div>
+                            <h4 className="font-medium">
+                              {attendee.firstName} {attendee.lastName}
+                            </h4>
+                            <p className="text-gray-600 text-sm">{attendee.email}</p>
+                            
+                            {attendee.dietaryRestrictions && (
+                              <p className="text-amber-600 text-sm mt-1">
+                                Dietary Restrictions: {attendee.dietaryRestrictions}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </CardContent>
+        
+        <CardFooter className="flex flex-col sm:flex-row gap-4 justify-between">
+          <Button variant="outline" asChild>
+            <Link href="/">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Return to Home
+            </Link>
+          </Button>
+        </CardFooter>
+      </Card>
+    </div>
+  );
+}
