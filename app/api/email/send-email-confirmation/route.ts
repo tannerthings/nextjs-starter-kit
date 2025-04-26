@@ -80,7 +80,7 @@ export async function POST(request: Request) {
 
     // Send the email
     const data = await resend.emails.send({
-      from: 'Events <noreply@mail.wileyswiftreunion.com>',
+      from: 'Wiley Swift Reunion <noreply@mail.wileyswiftreunion.com>',
       to: recipient,
       subject: subject,
       html: html,
