@@ -551,14 +551,14 @@ await sendReservationEmail(
               {paymentInfo.method === 'paypal' && (
                 <div>
                   <p>Please send ${cart.total.toFixed(2)} to:</p>
-                  <p className="font-medium my-2">payments@eventname.com</p>
+                  <p className="font-medium my-2">keithreeves172@gmail.com</p>
                   <p>Use the &quot;Friends &ldquo; Family&quot; option and include your full name in the notes.</p>
                 </div>
               )}
               {paymentInfo.method === 'zelle' && (
                 <div>
                   <p>Please send ${cart.total.toFixed(2)} to:</p>
-                  <p className="font-medium my-2">+1 (555) 123-4567 or payments@eventname.com</p>
+                  <p className="font-medium my-2">+1 (571) 284-9833 or keithreeves172@gmail.com</p>
                   <p>Include your full name in the memo.</p>
                 </div>
               )}
