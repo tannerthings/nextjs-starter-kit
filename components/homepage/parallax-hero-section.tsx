@@ -83,9 +83,9 @@ export default function ParallaxHero(): React.ReactElement {
     : [];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full">
       {/* Hero Section with Parallax */}
-      <div className="relative h-screen w-screen overflow-hidden">
+      <div className="relative h-screen w-full overflow-hidden">
         {/* Background Layer with image - moves slower */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
@@ -95,13 +95,8 @@ export default function ParallaxHero(): React.ReactElement {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            minWidth: '100%',
-            minHeight: '100%',
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
-            objectPosition: 'center',
-            overflow: 'hidden'
           }}
         >
           {/* Dark overlay as a separate element instead of box-shadow */}
@@ -135,21 +130,31 @@ export default function ParallaxHero(): React.ReactElement {
         
         {/* Foreground Layer - text content moves faster */}
         <div 
-          className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4"
+          className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 md:px-8 lg:px-16"
           style={{ transform: isClient ? `translateY(${scrollY * 0.5}px)` : 'translateY(0px)' }}
-        >          
-          {/* Call to Action Buttons */}
-          <div className="flex flex-row gap-4 mt-2">
-            <Link href="/learnmore" prefetch={true} >
-            <Button className="px-8 py-3 bg-transparent hover:bg-white/10 text-white font-semibold border-2 border-white rounded-lg transition-colors duration-300 shadow-lg transform hover:scale-105">
-              Learn More
-            </Button>
+        >
+          {/* Hero Title - Responsive text sizes */}
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4">
+            Welcome to Our Reunion
+          </h1>
+          
+          {/* Hero Subtitle - Responsive text sizes */}
+          <p className="text-sm md:text-base lg:text-lg mb-4 md:mb-6 max-w-md md:max-w-lg lg:max-w-xl mx-auto">
+            Join us for an unforgettable gathering to reconnect with old friends
+          </p>
+          
+          {/* Call to Action Buttons - Responsive layout */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-2">
+            <Link href="/learnmore" prefetch={true}>
+              <Button className="w-full sm:w-auto px-4 sm:px-6 md:px-8 py-2 md:py-3 bg-transparent hover:bg-white/10 text-white font-semibold border-2 border-white rounded-lg transition-colors duration-300 shadow-lg transform hover:scale-105">
+                Learn More
+              </Button>
             </Link>
 
-            <Link href="/registration" prefetch={true} >
-            <Button className="px-8 py-3 bg-black hover:bg-yellow-400 text-white hover:text-black font-semibold rounded-lg transition-colors duration-300 shadow-lg transform hover:scale-105" variant="outline">
-              Register Now
-            </Button>
+            <Link href="/registration" prefetch={true}>
+              <Button className="w-full sm:w-auto px-4 sm:px-6 md:px-8 py-2 md:py-3 bg-black hover:bg-yellow-400 text-white hover:text-black font-semibold rounded-lg transition-colors duration-300 shadow-lg transform hover:scale-105" variant="outline">
+                Register Now
+              </Button>
             </Link>  
           </div>
         </div>
