@@ -201,33 +201,21 @@ export default function LearnMorePage() {
           <div className="bg-white rounded-lg shadow-md p-6">
             <p className="text-gray-700 leading-relaxed">
               {/* In a real app, this would be a rich description from the event */}
-              Join us for an incredible event experience! This multi-day conference features
-              industry-leading speakers, networking opportunities, and hands-on workshops.
-              Whether you&aposre a beginner or an expert, there&aposs something for everyone.
+              Join us for an incredible event experience! This multi-day reunion has something for everyone.
             </p>
             
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-medium text-gray-900 mb-2">What&aposs Included</h3>
+                <h3 className="font-medium text-gray-900 mb-2">What&apos;s Included</h3>
                 <ul className="list-disc pl-5 text-gray-700 space-y-1">
-                  <li>Access to all keynote sessions</li>
-                  <li>Workshop materials</li>
-                  <li>Lunch and refreshments</li>
-                  <li>Networking reception</li>
+                  <li>Friday 7/25, 5-8pm Registration</li>
+                  <li>Saturday 7/26, 7-830pm Dessert and Drinks Reception</li>
+                  <li>Saturday 7/26, 8:30-10pm Wiley Swift Talent Shwo</li>
+                  <li>Sunday 7/27, 9:30-11am Family Business Meeting and  Spiritual Closing</li>
                   <li>Event swag bag</li>
                 </ul>
               </div>
               
-              <div>
-                <h3 className="font-medium text-gray-900 mb-2">Who Should Attend</h3>
-                <ul className="list-disc pl-5 text-gray-700 space-y-1">
-                  <li>Industry professionals</li>
-                  <li>Team leads and managers</li>
-                  <li>Students and academics</li>
-                  <li>Entrepreneurs and startups</li>
-                  <li>Anyone interested in the field</li>
-                </ul>
-              </div>
             </div>
           </div>
         </section>     
