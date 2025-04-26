@@ -151,15 +151,6 @@ export default function ParallaxHero(): React.ReactElement {
           className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 md:px-8 lg:px-16"
           style={{ transform: isClient ? `translateY(${scrollY * 0.5}px)` : 'translateY(0px)' }}
         >
-          {/* Hero Title - Responsive text sizes */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4">
-            Welcome to Our Reunion
-          </h1>
-          
-          {/* Hero Subtitle - Responsive text sizes */}
-          <p className="text-sm md:text-base lg:text-lg mb-4 md:mb-6 max-w-md md:max-w-lg lg:max-w-xl mx-auto">
-            Join us for an unforgettable gathering to reconnect with old friends
-          </p>
           
           {/* Call to Action Buttons - Responsive layout */}
           <div className="flex flex-col sm:flex-row gap-4 mt-2">
