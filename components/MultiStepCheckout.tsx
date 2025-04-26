@@ -95,18 +95,18 @@ export default function MultiStepCheckout({ cartId, onComplete, onCancel }: Chec
     // If all is valid and cart has tickets, prepare attendee info for next step
     if (hasTickets) {
       const newAttendeeInfo: AttendeeInfo[] = cart.items
-        .filter(item => item.itemType === 'ticket')
-        .map((item: CartItem) => ({
-          ticketId: item.itemId,
-          quantity: item.quantity,
-          attendees: Array(item.quantity).fill({
-            firstName: '',
-            lastName: '',
-            email: customerInfo.email, // Pre-fill with customer email
-            phone: customerInfo.phone, // Pre-fill with customer phone
-            dietaryRestrictions: '',
-          }),
-        }));
+      .filter(item => item.itemType === 'ticket')
+      .map((item: CartItem) => ({
+        ticketId: item.itemId,
+        quantity: item.quantity,
+        attendees: Array(item.quantity).fill(null).map(() => ({
+          firstName: '',
+          lastName: '',
+          email: customerInfo.email, // Pre-fill with customer email
+          phone: customerInfo.phone, // Pre-fill with customer phone
+          dietaryRestrictions: '',
+        })),
+      }));
       
       setAttendeeInfo(newAttendeeInfo);
       setErrors({});
@@ -221,8 +221,27 @@ export default function MultiStepCheckout({ cartId, onComplete, onCancel }: Chec
       setStep(4);
       onComplete(orderId);
 
-      await sendReservationEmail();
+     //
+     //  await sendReservationEmail();
       
+
+// Extract all attendee emails into a single array
+const allAttendeeEmails = attendeeInfo.flatMap(info => 
+  info.attendees.map(attendee => attendee.email)
+);
+
+// Call the updated sendReservationEmail function
+await sendReservationEmail(
+  orderId,
+  customerInfo.email,
+  allAttendeeEmails,
+  "rennatx@gmail.com", // Replace with actual admin email or fetch from config
+  {
+    items: cart.items,
+    total: cart.total
+  }
+);
+
     } catch (error) {
       console.error('Checkout error:', error);
       setErrors({
@@ -624,7 +643,7 @@ export default function MultiStepCheckout({ cartId, onComplete, onCancel }: Chec
 }
 
   // Function to send email through our API route
-  async function sendReservationEmail(
+  async function sendReservationEmailOld(
   ) {
     try {
       const response = await fetch("/api/email/send-email-confirmation", {
@@ -644,6 +663,89 @@ export default function MultiStepCheckout({ cartId, onComplete, onCancel }: Chec
       if (!response.ok) {
         throw new Error("Failed to send confirmation email");
       }
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+  }
+
+  async function sendReservationEmail(
+    orderId: Id<"orders">,
+    customerEmail: string,
+    attendeeEmails: string[],
+    adminEmail: string,
+    orderDetails: {
+      items: CartItem[],
+      total: number
+    }
+  ) {
+    try {
+      // Customer email confirmation
+      await fetch("/api/email/send-email-confirmation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer re_Ss3v3cFu_GNyfvPqDkEV9RWDJ4q3YJ9eC`,
+        },
+        body: JSON.stringify({
+          to: customerEmail,
+          subject: "Your Registration Confirmation",
+          html: `
+            <h1>Thank you for your order!</h1>
+            <p>Order ID: ${orderId}</p>
+            <p>Total: $${orderDetails.total.toFixed(2)}</p>
+            <!-- Add more order details here -->
+          `,
+        }),
+      });
+
+
+      console.log("Attendee notification email");
+      
+      // Optional: Send emails to each attendee (if different from customer)
+      for (const email of attendeeEmails) {
+        if (email !== customerEmail) {
+          await fetch("/api/email/send-email-confirmation", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer re_Ss3v3cFu_GNyfvPqDkEV9RWDJ4q3YJ9eC`,
+            },
+            body: JSON.stringify({
+              to: email,
+              emailType: 'attendee',
+              subject: "Your Registration Information",
+              html: `
+                <h1>Your Registration Information</h1>
+                <p>Order ID: ${orderId}</p>
+                <!-- Add more ticket-specific details here -->
+              `,
+            }),
+          });
+        }
+      }
+      
+      console.log("Admin notification email");
+      // Admin notification email
+      await fetch("/api/email/send-email-confirmation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer re_Ss3v3cFu_GNyfvPqDkEV9RWDJ4q3YJ9eC`,
+        },
+        body: JSON.stringify({
+          to: adminEmail,
+          emailType: 'admin',
+          subject: "New Order Received",
+          html: `
+            <h1>New Order Received</h1>
+            <p>Order ID: ${orderId}</p>
+            <p>Customer: ${customerEmail}</p>
+            <p>Total: $${orderDetails.total.toFixed(2)}</p>
+            <a href='https://www.wileyswiftreunion.com/attendees'>Attendees Management</a>
+            <!-- Add more order details here for admin -->
+          `,
+        }),
+      });
     } catch (error) {
       console.error("Error sending email:", error);
     }

@@ -90,7 +90,7 @@ export default function Footer() {
                                     />
                                 </div>
                                 <div className="mt-3 sm:ml-3 sm:mt-0">
-                                    <Button type="submit" className="w-full rounded-full bg-blue-600 hover:bg-blue-500 text-white">
+                                    <Button type="submit" className="w-full rounded-full bg-yellow-600 hover:bg-yellow-500 text-black">
                                         Subscribe
                                         <ArrowRight className="ml-2 h-4 w-4" />
                                     </Button>
