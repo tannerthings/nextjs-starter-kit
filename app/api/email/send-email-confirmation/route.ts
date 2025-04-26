@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 
 // Initialize Resend with your API key
 // In production, use environment variables
-const resend = new Resend('re_Ss3v3cFu_GNyfvPqDkEV9RWDJ4q3YJ9eC');
+const resend = new Resend('re_Ss3v3cFu_GNyfvPqDkEV9RWDJ4q3YJ9eC'); 
 
 export async function POST(request: Request) {
   try {
@@ -18,7 +18,6 @@ export async function POST(request: Request) {
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
         <h1 style="color: #333;">Payment Confirmation</h1>
 
-        
         <p>We have received your payment and your reservation is now confirmed. You will receive your ticket(s) closer to the event date.</p>
         
         <p>Thank you for your reservation!</p>
