@@ -91,7 +91,7 @@ export default function ParallaxHero(): React.ReactElement {
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
             transform: isClient ? `translateY(${scrollY * 0.1}px)` : 'translateY(0px)',
-            backgroundImage: `url('/images/ReunionHeroImageAI.png')`,
+            backgroundImage: `url('/images/ReunionHeroImageAI-mobile.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -99,6 +99,24 @@ export default function ParallaxHero(): React.ReactElement {
             height: '100%',
           }}
         >
+          {/* Responsive background images using media queries */}
+          <style jsx>{`
+            @media (min-width: 640px) {
+              div {
+                background-image: url('/images/ReunionHeroImageAI-tablet.png');
+              }
+            }
+            @media (min-width: 1024px) {
+              div {
+                background-image: url('/images/ReunionHeroImageAI-desktop.png');
+              }
+            }
+            @media (min-width: 1920px) {
+              div {
+                background-image: url('/images/ReunionHeroImageAI-large.png');
+              }
+            }
+          `}</style>
           {/* Dark overlay as a separate element instead of box-shadow */}
           <div 
             className="absolute inset-0" 
