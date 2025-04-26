@@ -91,7 +91,7 @@ export default function ParallaxHero(): React.ReactElement {
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
             transform: isClient ? `translateY(${scrollY * 0.1}px)` : 'translateY(0px)',
-            backgroundImage: `url('/images/ReunionHeroImageAI-mobile.png')`,
+            backgroundImage: `url('/images/ReunionHeroImageAI.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -106,9 +106,15 @@ export default function ParallaxHero(): React.ReactElement {
                 background-image: url('/images/ReunionHeroImageAI.png');
               }
             }
-            @media (min-width: 1024px) {
+            @media (min-width: 1125px) {
               div {
-                background-image: url('/images/ReunionHeroImageAI.png');
+                background-image: url('/images/ReunionHeroImageAI-mobile.png');
+              }
+            }
+            /* For larger phones in portrait */
+            @media only screen and (min-width: 415px) and (max-width: 480px) {
+              div {
+                background-image: url('/images/ReunionHeroImageAI-mobile.png');
               }
             }
             @media (min-width: 1920px) {
