@@ -17,7 +17,7 @@ export default function PageWrapper({ children }: { children: React.ReactNode })
     }
   }, [user, isSignedIn, storeUser]);
 
-//  {<NavBar />}
+  {<NavBar />
 
   return (
     <>
