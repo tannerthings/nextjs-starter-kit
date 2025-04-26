@@ -56,7 +56,7 @@ export default function OrderConfirmation() {
                 {new Date(orderData.createdAt).toLocaleDateString()}
               </p>
             </div>
-            <div className="px-4 py-2 bg-blue-100 text-blue-800 rounded">
+            <div className="px-4 py-2 bg-blue-100 text-yellow-800 rounded">
               Completed
             </div>
           </div>

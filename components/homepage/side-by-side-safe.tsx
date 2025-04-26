@@ -45,7 +45,7 @@ export default function SideBySide() {
                 </div>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 dark:from-white dark:via-blue-300 dark:to-white pb-2">
+              <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-yellow-800 to-gray-900 dark:from-white dark:via-yellow-300 dark:to-white pb-2">
               Remember the Magic Moments
               </h2>
               <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">

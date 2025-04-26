@@ -39,7 +39,7 @@ export default async function PricingPage() {
             </div>
 
             {/* Main heading */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 dark:from-white dark:via-blue-300 dark:to-white animate-gradient-x pb-2">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-yellow-800 to-gray-900 dark:from-white dark:via-yellow-300 dark:to-white animate-gradient-x pb-2">
               Choose Your Perfect Plan
             </h1>
 
@@ -54,7 +54,7 @@ export default async function PricingPage() {
         <section className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 dark:from-white dark:via-blue-300 dark:to-white">
+              <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-yellow-800 to-gray-900 dark:from-white dark:via-yellow-300 dark:to-white">
                 Everything You Need
               </h2>
               <p className="text-gray-600 dark:text-gray-400">

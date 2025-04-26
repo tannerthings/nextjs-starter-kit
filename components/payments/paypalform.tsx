@@ -334,7 +334,7 @@ const PayPalFnFPayment: React.FC<PayPalFnFPaymentProps> = ({
       {/* Payment Link Generation */}
       {!paymentLink ? (
         <button
-          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors disabled:bg-blue-300"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors disabled:bg-yellow-300"
           onClick={generatePaymentLink}
           disabled={isLoading || !paypalSettings.email || !paypalSettings.enableFriendsAndFamily}
         >

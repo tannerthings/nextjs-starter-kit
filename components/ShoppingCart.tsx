@@ -225,7 +225,7 @@ export default function ShoppingCart({ sessionId, cartId, onCheckout }: CartProp
                                     <p className="mt-1 text-sm text-gray-500">{item.description}</p>
                                     {renderVariants(item)}
                                     <div className="mt-1 text-xs text-gray-500">
-                                      <span className="rounded-full bg-blue-100 text-blue-800 px-2 py-0.5">
+                                      <span className="rounded-full bg-blue-100 text-yellow-800 px-2 py-0.5">
                                         {item.itemType === 'ticket' ? 'Ticket' : 'Merchandise'}
                                       </span>
                                     </div>

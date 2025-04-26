@@ -25,15 +25,8 @@ export function AccordionComponent() {
             <div className="max-w-4xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-16">
-                    {/* Pill badge */}
-                    <div className="mx-auto w-fit rounded-full border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-900/30 px-4 py-1 mb-6">
-                        <div className="flex items-center gap-2 text-sm font-medium text-blue-900 dark:text-blue-200">
-                            <HelpCircle className="h-4 w-4" />
-                            <span>FAQ</span>
-                        </div>
-                    </div>
 
-                    <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 dark:from-white dark:via-blue-300 dark:to-white pb-2">
+                    <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-yellow-800 to-gray-900 dark:from-white dark:via-yellow-300 dark:to-white pb-2">
                         Frequently Asked Questions
                     </h2>
                     <p className="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
