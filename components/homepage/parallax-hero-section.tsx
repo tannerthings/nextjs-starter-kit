@@ -154,17 +154,19 @@ export default function ParallaxHero(): React.ReactElement {
           
           {/* Call to Action Buttons - Responsive layout */}
           <div className="flex flex-col sm:flex-row gap-4 mt-2">
+          <Link href="/registration" prefetch={true}>
+              <Button className="w-full sm:w-auto px-4 sm:px-6 md:px-8 py-2 md:py-3 bg-black hover:bg-yellow-400 text-white hover:text-black font-semibold rounded-lg transition-colors duration-300 shadow-lg transform hover:scale-105" variant="outline">
+                Register Now
+              </Button>
+            </Link>  
+            
             <Link href="/learnmore" prefetch={true}>
               <Button className="w-full sm:w-auto px-4 sm:px-6 md:px-8 py-2 md:py-3 bg-transparent hover:bg-white/10 text-white font-semibold border-2 border-white rounded-lg transition-colors duration-300 shadow-lg transform hover:scale-105">
                 Learn More
               </Button>
             </Link>
 
-            <Link href="/registration" prefetch={true}>
-              <Button className="w-full sm:w-auto px-4 sm:px-6 md:px-8 py-2 md:py-3 bg-black hover:bg-yellow-400 text-white hover:text-black font-semibold rounded-lg transition-colors duration-300 shadow-lg transform hover:scale-105" variant="outline">
-                Register Now
-              </Button>
-            </Link>  
+
           </div>
         </div>
       </div>
