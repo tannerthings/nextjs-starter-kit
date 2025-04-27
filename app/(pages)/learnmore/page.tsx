@@ -209,10 +209,9 @@ export default function LearnMorePage() {
                 <h3 className="font-medium text-gray-900 mb-2">What&apos;s Included</h3>
                 <ul className="list-disc pl-5 text-gray-700 space-y-1">
                   <li>Friday 7/25, 5-8pm Registration</li>
-                  <li>Saturday 7/26, 7-830pm Dessert and Drinks Reception</li>
-                  <li>Saturday 7/26, 8:30-10pm Wiley Swift Talent Shwo</li>
+                  <li>Saturday 7/26, 7-8:30pm Dessert and Drinks Reception</li>
+                  <li>Saturday 7/26, 8:30-10pm Wiley Swift Talent Show</li>
                   <li>Sunday 7/27, 9:30-11am Family Business Meeting and  Spiritual Closing</li>
-                  <li>Event swag bag</li>
                 </ul>
               </div>
               

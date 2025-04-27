@@ -10,18 +10,18 @@ export default clerkMiddleware(async (auth, req) => {
   const token = (await (await auth()).getToken({ template: "convex" }))
 
 
-  const { hasActiveSubscription } = await fetchQuery(api.subscriptions.getUserSubscriptionStatus, {
-  }, {
-    token: token!,
-  });
+  //const { hasActiveSubscription } = await fetchQuery(api.subscriptions.getUserSubscriptionStatus, {
+  //}, {
+  //  token: token!,
+  //});
 
   const isDashboard = req.nextUrl.href.includes(`/dashboard`)
 
-  if (isDashboard && !hasActiveSubscription) {
-    const pricingUrl = new URL('/admin', req.nextUrl.origin)
+  //if (isDashboard && !hasActiveSubscription) {
+  //  const pricingUrl = new URL('/admin', req.nextUrl.origin)
     // Redirect to the pricing page
-    return NextResponse.redirect(pricingUrl);
-  }
+  //  return NextResponse.redirect(pricingUrl);
+  //}
 
   if (isProtectedRoute(req)) await auth.protect()
 })
