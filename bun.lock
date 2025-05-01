@@ -88,6 +88,7 @@
         "pdf-lib": "^1.17.1",
         "qrcode": "^1.5.4",
         "react": "latest",
+        "react-d3-treemap": "^2.0.6",
         "react-day-picker": "^8.10.1",
         "react-dom": "latest",
         "react-email": "^4.0.7",
@@ -560,6 +561,10 @@
     "@react-email/tailwind": ["@react-email/tailwind@1.0.4", "", { "peerDependencies": { "react": "^18.0 || ^19.0 || ^19.0.0-rc" } }, "sha512-tJdcusncdqgvTUYZIuhNC6LYTfL9vNTSQpwWdTCQhQ1lsrNCEE4OKCSdzSV3S9F32pi0i0xQ+YPJHKIzGjdTSA=="],
 
     "@react-email/text": ["@react-email/text@0.1.1", "", { "peerDependencies": { "react": "^18.0 || ^19.0 || ^19.0.0-rc" } }, "sha512-Zo9tSEzkO3fODLVH1yVhzVCiwETfeEL5wU93jXKWo2DHoMuiZ9Iabaso3T0D0UjhrCB1PBMeq2YiejqeToTyIQ=="],
+
+    "@react-hookz/deep-equal": ["@react-hookz/deep-equal@1.0.4", "", {}, "sha512-N56fTrAPUDz/R423pag+n6TXWbvlBZDtTehaGFjK0InmN+V2OFWLE/WmORhmn6Ce7dlwH5+tQN1LJFw3ngTJVg=="],
+
+    "@react-hookz/web": ["@react-hookz/web@24.0.4", "", { "dependencies": { "@react-hookz/deep-equal": "^1.0.4" }, "peerDependencies": { "js-cookie": "^3.0.5", "react": "^16.8 || ^17 || ^18", "react-dom": "^16.8 || ^17 || ^18" }, "optionalPeers": ["js-cookie"] }, "sha512-DcIM6JiZklDyHF6CRD1FTXzuggAkQ+3Ncq2Wln7Kdih8GV6ZIeN9JfS6ZaQxpQUxan8/4n0J2V/R7nMeiSrb2Q=="],
 
     "@react-pdf/fns": ["@react-pdf/fns@2.2.1", "", { "dependencies": { "@babel/runtime": "^7.20.13" } }, "sha512-s78aDg0vDYaijU5lLOCsUD+qinQbfOvcNeaoX9AiE7+kZzzCo6B/nX+l48cmt9OosJmvZvE9DWR9cLhrhOi2pA=="],
 
@@ -2013,6 +2018,8 @@
 
     "react": ["react@19.0.0", "", {}, "sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ=="],
 
+    "react-d3-treemap": ["react-d3-treemap@2.0.6", "", { "dependencies": { "@react-hookz/web": "^24.0.4", "@types/d3-array": "^3.2.1", "@types/d3-color": "^3.1.3", "@types/d3-format": "^3.0.4", "@types/d3-hierarchy": "^3.1.7", "@types/d3-interpolate": "^3.0.4", "@types/d3-scale": "^4.0.8", "@types/d3-scale-chromatic": "^3.0.3", "classnames": "^2.5.1", "d3-array": "^3.2.4", "d3-color": "^3.1.0", "d3-format": "^3.1.0", "d3-hierarchy": "^3.1.2", "d3-interpolate": "^3.0.1", "d3-scale": "^4.0.2", "d3-scale-chromatic": "^3.1.0" }, "peerDependencies": { "react": "15.x.x || 17.x.x || 18.x.x", "react-dom": "15.x.x || 17.x.x || 18.x.x" } }, "sha512-o8wuKpY4rX8zyVZxnB31uGdiu0PNg9f3MxNp4KmmhACPuIolzRKuKSSdLESxSaCmE0PU7eMNzvFz/lk5AP8OGg=="],
+
     "react-day-picker": ["react-day-picker@8.10.1", "", { "peerDependencies": { "date-fns": "^2.28.0 || ^3.0.0", "react": "^16.8.0 || ^17.0.0 || ^18.0.0" } }, "sha512-TMx7fNbhLk15eqcMt+7Z7S2KF7mfTId/XJDjKE8f+IUcFn0l08/kI4FiYTL/0yuOLmEcbR4Fwe3GJf/NiiMnPA=="],
 
     "react-dom": ["react-dom@19.0.0", "", { "dependencies": { "scheduler": "^0.25.0" }, "peerDependencies": { "react": "^19.0.0" } }, "sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ=="],
@@ -2756,6 +2763,8 @@
     "raw-body/iconv-lite": ["iconv-lite@0.4.24", "", { "dependencies": { "safer-buffer": ">= 2.1.2 < 3" } }, "sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA=="],
 
     "rc/strip-json-comments": ["strip-json-comments@2.0.1", "", {}, "sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ=="],
+
+    "react-d3-treemap/classnames": ["classnames@2.5.1", "", {}, "sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow=="],
 
     "react-dom/scheduler": ["scheduler@0.25.0", "", {}, "sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA=="],
 

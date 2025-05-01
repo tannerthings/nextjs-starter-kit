@@ -10,7 +10,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://wileyswiftreunion.com"),
   title: {
-    default: 'Wiley Swift Family Reunion',
+    default: 'Finance Report',
     template: `%s | Wiley Swift Reunion`
   },
   description:

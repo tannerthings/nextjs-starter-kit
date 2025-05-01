@@ -604,7 +604,7 @@ await sendReservationEmail(
           {paymentInfo.method && (
             <div className="mb-6">
               <label htmlFor="confirmation" className="block text-sm font-medium text-gray-700 mb-1">
-                Transaction ID/Confirmation *
+                Confirmation *
               </label>
               <input
                 type="text"
@@ -612,7 +612,7 @@ await sendReservationEmail(
                 value={paymentInfo.confirmation}
                 onChange={(e) => setPaymentInfo({ ...paymentInfo, confirmation: e.target.value })}
                 className={`w-full p-2 border rounded ${errors.confirmation ? 'border-red-500' : 'border-gray-300'}`}
-                placeholder="Enter the transaction ID or last 4 digits of your confirmation"
+                placeholder="Enter Payment Note"
               />
               {errors.confirmation && <p className="mt-1 text-xs text-red-500">{errors.confirmation}</p>}
             </div>

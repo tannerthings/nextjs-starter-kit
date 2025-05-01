@@ -93,6 +93,7 @@
     "pdf-lib": "^1.17.1",
     "qrcode": "^1.5.4",
     "react": "latest",
+    "react-d3-treemap": "^2.0.6",
     "react-day-picker": "^8.10.1",
     "react-dom": "latest",
     "react-email": "^4.0.7",

@@ -7,21 +7,21 @@ import Footer from './footer';
 import NavBar from './navbar';
 
 export default function PageWrapper({ children }: { children: React.ReactNode }) {
-  const { isSignedIn } = useAuth();
-  const user = useQuery(api.users.getUser);
-  const storeUser = useMutation(api.users.store);
+ // const { isSignedIn } = useAuth();
+ // const user = useQuery(api.users.getUser);
+ // const storeUser = useMutation(api.users.store);
 
-  useEffect(() => {
-    if (user && isSignedIn) {
-      storeUser();
-    }
-  }, [user, isSignedIn, storeUser]);
+ // useEffect(() => {
+ //   if (user && isSignedIn) {
+ //     storeUser();
+ //   }
+ // }, [user, isSignedIn, storeUser]);
 
   
-
+// <NavBar />
   return (
     <>
-    <NavBar />
+   
       <main className="flex min-w-screen min-h-screen flex-col items-center dark:bg-black bg-white justify-between">
         <div className="absolute z-[-99] pointer-events-none inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         {children}
