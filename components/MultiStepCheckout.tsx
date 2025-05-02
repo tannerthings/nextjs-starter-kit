@@ -174,6 +174,10 @@ export default function MultiStepCheckout({ cartId, onComplete, onCancel }: Chec
       newErrors.paymentPhone = 'Zelle phone number is required';
     }
     
+    if (paymentInfo.method === 'check' && !paymentInfo.phone) {
+      newErrors.paymentPhone = 'Phone number is required';
+    }
+
     if (!paymentInfo.confirmation) {
       newErrors.confirmation = 'Payment confirmation is required';
     }
@@ -540,6 +544,21 @@ await sendReservationEmail(
                   <span className="block text-sm font-medium text-gray-900">Zelle</span>
                 </label>
               </div>
+
+              <div className="relative border rounded p-3 flex cursor-pointer border-gray-300">
+                <input
+                  type="radio"
+                  name="payment-method"
+                  id="check"
+                  value="check"
+                  className="h-4 w-4 mt-1"
+                  checked={paymentInfo.method === 'check'}
+                  onChange={() => setPaymentInfo({ ...paymentInfo, method: 'check' })}
+                />
+                <label htmlFor="check" className="ml-3 flex flex-col cursor-pointer">
+                  <span className="block text-sm font-medium text-gray-900">Check</span>
+                </label>
+              </div>              
             </div>
             {errors.method && <p className="mt-1 text-xs text-red-500">{errors.method}</p>}
           </div>
@@ -562,6 +581,13 @@ await sendReservationEmail(
                   <p>Include your full name in the memo.</p>
                 </div>
               )}
+              {paymentInfo.method === 'check' && (
+                <div>
+                  <p>Please write check in the amount ${cart.total.toFixed(2)} to:</p>
+                  <p className="font-medium my-2">Send check to: Keith Reeves, 8247 Roxborough Loop, Gainsville, VA 20155</p>
+                  <p>Include your full name in the memo.</p>
+                </div>
+              )}              
             </div>
           )}
           
@@ -600,6 +626,23 @@ await sendReservationEmail(
             </div>
           )}
           
+          {paymentInfo.method === 'check' && (
+            <div className="mb-4">
+              <label htmlFor="paymentCheck" className="block text-sm font-medium text-gray-700 mb-1">
+                Your Phone Number *
+              </label>
+              <input
+                type="tel"
+                id="paymentPhone"
+                value={paymentInfo.phone}
+                onChange={(e) => setPaymentInfo({ ...paymentInfo, phone: e.target.value })}
+                className={`w-full p-2 border rounded ${errors.paymentPhone ? 'border-red-500' : 'border-gray-300'}`}
+                placeholder="Phone number associated with payment"
+              />
+              {errors.paymentPhone && <p className="mt-1 text-xs text-red-500">{errors.paymentPhone}</p>}
+            </div>
+          )}
+
           {/* Transaction ID field for verification */}
           {paymentInfo.method && (
             <div className="mb-6">
